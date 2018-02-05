@@ -1,0 +1,577 @@
+/*
+Project Name: The LOVE Perspective - Final Project
+Client: FEWD - Matt & Gio
+Author: Sharan Mankoo
+Developer @GA in London
+*/
+
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+/*****************
+/* FONT STYLES
+/*****************/
+@font-face {
+    font-family: goku_250_stencil-webfont;
+    src: url(../fonts/goku_250_stencil-webfont.woff);
+}
+
+body {
+  color: #fff;
+  background-color: rgba(255,255,255,1);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* Center the container */
+.container {
+	width: 90%;
+	margin: auto;
+}
+
+/******************************************
+/* GENERAL
+/*******************************************/
+
+img {
+  width: 100%;
+  height: auto;
+  }
+
+  a {
+  	text-decoration: none;
+  	color: #fff;
+  }
+
+  p {
+  	line-height: 1.7;
+  	margin-bottom: 2.5rem;
+  }
+
+  h1 {
+  	/**font-family: goku_250_stencil-webfont;**/
+  	font-size: 1.5rem;
+  	margin-bottom: 1rem;
+  }
+
+
+/******************************************
+/* HEADER
+/*******************************************/
+
+.logo {
+	width: 25rem;
+	height: auto;
+	margin: 0 auto;
+}
+
+/******************************************
+/* HAMBURGER NAV
+/*******************************************/
+
+nav {
+	transition: transform 0.6s ease-in;
+	transform: translateY(-100%);
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	background-color: rgba(255,255,255,0.95);
+	}	
+
+nav a {
+  	text-decoration: none;
+  	color: #000;
+  }
+
+nav.active {
+	transform: translateY(0);
+}
+
+.hamburger {
+	position: relative;
+	z-index: 100;
+	width: 2rem;
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+
+}
+
+
+nav ul {
+	list-style-type: none;
+}
+
+nav li {
+	font-family: goku_250_stencil-webfont;
+	color: #000;
+	text-transform: 
+	margin: 2rem 0;
+	text-decoration: none;
+}
+
+.nav-link {
+	position: relative;
+}
+
+.nav-link:before {
+	content: "";
+	position: absolute;
+	bottom: -7px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background-color: black;
+	left: calc(50% - 5px);
+	transition: left 0.3s ease;
+	transition: transform 0.3s ease-in;
+}
+
+.nav-link:hover:before {
+	width: 20px;
+}
+
+.social {
+	display: inline-block;
+	padding-top: 5rem;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.8rem;
+	text-align: center;
+
+}
+
+.social a {
+	font-size: 0.8rem;
+}
+
+
+ins {
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+
+/******************************************
+/* FORM
+/*******************************************/
+
+form {
+	text-align: left;
+	padding: 4rem;
+	line-height: 1.7rem;
+	border: 3px solid #fff;
+}
+
+label {
+	font-size: 1rem;
+	
+}
+
+input {
+	margin-bottom: 1.5rem;
+	width: 100%;
+	color: #000;
+	background-color: #fff;
+	padding: 1rem;
+	border: none;
+}
+
+textarea {
+	width: 100%;
+	color: #000;
+	background-color: #fff;
+	padding: 1rem;
+	border: none;
+}
+
+button {
+	width: 100%;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 1.3rem;
+	font-weight: bold;
+	padding: 1rem;
+	margin-top: 0.5rem;
+	border: 3px solid #fff;
+	background-color: rgba(255,255,255,0);
+}
+
+.form-space {
+	padding-bottom: 4rem;
+
+}
+
+/******************************************
+/* PARALLAX SCROLL
+/*******************************************/
+
+body, html {
+    min-height: 100%;
+}
+
+.multi-parallax {
+	height: 45vh;
+	overflow: hidden;
+	position: relative;
+}
+	
+.layer {
+	background-position: bottom center;
+	background-size: auto;
+	-webkit-background-size: 100% auto;
+  	-moz-background-size: 100% auto;
+  	-o-background-size: 100% auto;
+  	background-size: 100% auto;
+  	max-width:100%;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 45vh;
+	position: absolute;
+	z-index: -1;
+}
+
+
+/*********
+/* ORANGE
+/**/
+
+.layer-1 {
+	background-image: url('../images/bg-solid-left-orange.png');
+	background-position: left bottom;
+}
+.layer-2 {
+	background-image: url('../images/bg-solid-right-orange.png');
+	background-position: right bottom;
+}
+.layer-3 {
+	background-image: url('../images/bg-hashed-left-orange.png');
+}
+.layer-4 {
+	background-image: url('../images/bg-hashed-right-orange.png');
+	background-position: right bottom;
+}
+.layer-5 {
+	background-image: url('../images/bg-outline-right-orange.png');
+}
+.layer-6 {
+	background-image: url('../images/bg-outline-left-orange.png');
+}
+
+
+/*********
+/* YELLOW
+/**/
+
+.layer-7 {
+	background-image: url('../images/bg-solid-left-yellow.png');
+	background-position: left bottom;
+}
+.layer-8 {
+	background-image: url('../images/bg-solid-right-yellow.png');
+	background-position: right bottom;
+}
+.layer-9 {
+	background-image: url('../images/bg-hashed-left-yellow.png');
+}
+.layer-10 {
+	background-image: url('../images/bg-hashed-right-yellow.png');
+	background-position: right bottom;
+}
+.layer-11 {
+	background-image: url('../images/bg-outline-right-yellow.png');
+}
+.layer-12 {
+	background-image: url('../images/bg-outline-left-yellow.png');
+}
+
+/*********
+/* GREEN
+/**/
+
+.layer-13 {
+	background-image: url('../images/bg-solid-left-green.png');
+	background-position: left bottom;
+}
+.layer-14 {
+	background-image: url('../images/bg-solid-right-green.png');
+	background-position: right bottom;
+}
+.layer-15 {
+	background-image: url('../images/bg-hashed-left-green.png');
+}
+.layer-16 {
+	background-image: url('../images/bg-hashed-right-green.png');
+	background-position: right bottom;
+}
+.layer-17 {
+	background-image: url('../images/bg-outline-right-green.png');
+}
+.layer-18 {
+	background-image: url('../images/bg-outline-left-green.png');
+}
+
+
+/*********
+/* BLUE
+/**/
+
+.layer-19 {
+	background-image: url('../images/bg-solid-left-blue.png');
+	background-position: left bottom;
+}
+.layer-20 {
+	background-image: url('../images/bg-solid-right-blue.png');
+	background-position: right bottom;
+}
+.layer-21 {
+	background-image: url('../images/bg-hashed-left-blue.png');
+}
+.layer-22 {
+	background-image: url('../images/bg-hashed-right-blue.png');
+	background-position: right bottom;
+}
+.layer-23 {
+	background-image: url('../images/bg-outline-right-blue.png');
+}
+.layer-24 {
+	background-image: url('../images/bg-outline-left-blue.png');
+}
+
+/*********
+/* PURPLE
+/**/
+
+.layer-25 {
+	background-image: url('../images/bg-solid-left-purple.png');
+	background-position: left bottom;
+}
+.layer-26 {
+	background-image: url('../images/bg-solid-right-purple.png');
+	background-position: right bottom;
+}
+.layer-27 {
+	background-image: url('../images/bg-hashed-left-purple.png');
+}
+.layer-28 {
+	background-image: url('../images/bg-hashed-right-purple.png');
+	background-position: right bottom;
+}
+.layer-29 {
+	background-image: url('../images/bg-outline-right-purple.png');
+}
+.layer-30 {
+	background-image: url('../images/bg-outline-left-purple.png');
+}
+
+
+
+/***********************
+/* RESPONSES
+/***********************/
+
+.response {
+	display: none;
+}
+
+.trait {
+	width: 100%;
+	padding: 7rem 3rem;
+	text-align: left;
+}
+
+.orange {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0977b+0,fcf19a+100 */
+background: rgb(240,151,123); /* Old browsers */
+background: -webkit-linear-gradient(bottom left, rgba(240,151,123,1) 0%, rgba(252,241,154,1) 100%);
+background: -o-linear-gradient(bottom left, rgba(240,151,123,1) 0%, rgba(252,241,154,1) 100%);
+background: linear-gradient(to top right, rgba(240,151,123,1) 0%, rgba(252,241,154,1) 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0977b', endColorstr='#fcf19a',GradientType=1 ); 
+  }
+
+
+ .yellow {
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcf19a+0,a6d59a+99 */
+ background: rgb(252,241,154); /* Old browsers */
+ background: -webkit-linear-gradient(bottom left, rgba(252,241,154,1) 0%, rgba(166,213,154,1) 99%);
+ background: -o-linear-gradient(bottom left, rgba(252,241,154,1) 0%, rgba(166,213,154,1) 99%);
+ background: linear-gradient(to top right, rgba(252,241,154,1) 0%, rgba(166,213,154,1) 99%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcf19a', endColorstr='#a6d59a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+
+  .green {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a6d59a+0,7a95c9+100 */
+  background: rgb(166,213,154); /* Old browsers */
+  background: -webkit-linear-gradient(bottom left, rgba(166,213,154,1) 0%, rgba(122,149,201,1) 100%);
+  background: -o-linear-gradient(bottom left, rgba(166,213,154,1) 0%, rgba(122,149,201,1) 100%);
+  background: linear-gradient(to top right, rgba(166,213,154,1) 0%, rgba(122,149,201,1) 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6d59a', endColorstr='#7a95c9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+
+ .blue {
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7a95c9+0,9281b9+100 */
+ background: rgb(122,149,201); /* Old browsers */
+ background: -webkit-linear-gradient(bottom left, rgba(122,149,201,1) 0%, rgba(146,129,185,1) 100%);
+ background: -o-linear-gradient(bottom left, rgba(122,149,201,1) 0%, rgba(146,129,185,1) 100%);
+ background: linear-gradient(to top right, rgba(122,149,201,1) 0%, rgba(146,129,185,1) 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a95c9', endColorstr='#9281b9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+
+  .purple {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9281b9+0,eb99ba+100 */
+  background: rgb(146,129,185); /* Old browsers */
+  background: -webkit-linear-gradient(bottom left, rgba(146,129,185,1) 0%, rgba(235,153,186,1) 100%);
+  background: -o-linear-gradient(bottom left, rgba(146,129,185,1) 0%, rgba(235,153,186,1) 100%);
+  background: linear-gradient(to top right, rgba(146,129,185,1) 0%, rgba(235,153,186,1) 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9281b9', endColorstr='#eb99ba',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+
+/**************
+/* FOOTER
+/**************/
+
+footer {
+	font-size: 0.7rem;
+	color: #000;
+	background-color: #fff;
+	text-align: center;
+	padding: 5rem 0;
+	
+}
+
+
+/******************************************
+/* ALL PAGES BACKGROUND COLOUR VARIATIONS
+/*******************************************/
+
+.pink {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eb99ba+0,fcf19a+100 */
+background: rgb(235,153,186); /* Old browsers */
+background: -moz-linear-gradient(45deg, rgba(235,153,186,1) 0%, rgba(252,241,154,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, rgba(235,153,186,1) 0%,rgba(252,241,154,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, rgba(235,153,186,1) 0%,rgba(252,241,154,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb99ba', endColorstr='#fcf19a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+copy
+
+}
+
+.rainbow {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7a95c9+0,9281b9+20,eb99ba+40,f0977b+60,fcf19a+80,a6d59a+100 */
+background: rgb(122,149,201); /* Old browsers */
+background: -moz-linear-gradient(45deg, rgba(122,149,201,1) 0%, rgba(146,129,185,1) 20%, rgba(235,153,186,1) 40%, rgba(240,151,123,1) 60%, rgba(252,241,154,1) 80%, rgba(166,213,154,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, rgba(122,149,201,1) 0%,rgba(146,129,185,1) 20%,rgba(235,153,186,1) 40%,rgba(240,151,123,1) 60%,rgba(252,241,154,1) 80%,rgba(166,213,154,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, rgba(122,149,201,1) 0%,rgba(146,129,185,1) 20%,rgba(235,153,186,1) 40%,rgba(240,151,123,1) 60%,rgba(252,241,154,1) 80%,rgba(166,213,154,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a95c9', endColorstr='#a6d59a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.grey {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#666767+0,d6d3d3+100 */
+background: rgb(102,103,103); /* Old browsers */
+background: -moz-linear-gradient(45deg, rgba(102,103,103,1) 0%, rgba(214,211,211,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, rgba(102,103,103,1) 0%,rgba(214,211,211,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, rgba(102,103,103,1) 0%,rgba(214,211,211,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666767', endColorstr='#d6d3d3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+/******************************************
+/* MEDIA QUERY FOR 600px breakpoint
+/*******************************************/
+
+@media screen and (min-width: 600px) {
+
+	nav a {
+		font-size: 2.5rem;
+	}
+
+	.multi-parallax {
+		height: 65vh;
+	}
+
+	.layer {
+		height: 65vh;
+	}
+
+}
+
+
+/******************************************
+/* MEDIA QUERY FOR 1000px breakpoint
+/*******************************************/
+
+@media screen and (min-width: 1000px) {
+
+	.multi-parallax {
+		height: 90vh;
+	}
+
+	.layer {
+		height: 90vh;
+	}
+
+/***************
+/* LOVE PERSPECTIVE
+/**************/
+
+/*@keyframes play {
+	0% { 
+		background-position: 0; 
+	}
+	100% { 
+		background-position: -4800px; 
+	}
+}
+
+.love-sprite {
+	height: 370px;
+	width: 320px;
+	background: url('../images/number-sprite.jpg');
+	background-repeat: no-repeat;
+	background-position: 0;
+	/*animation: play 0.8s steps(16) infinite;
+	}/*
+
+}
+
+
+
+
+
