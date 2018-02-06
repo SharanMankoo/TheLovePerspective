@@ -41,7 +41,6 @@ Developer @GA in London
 
 body {
   color: #fff;
-  background-color: rgba(255,255,255,1);
   font-size: 3rem;
   line-height: 1.5;
   font-family: Helvetica, Arial, sans-serif;
@@ -76,12 +75,11 @@ img {
   	margin-bottom: 2.5rem;
   }
 
-  p:last-child {
+  .p-content:last-child {
   	margin-bottom: 5rem;
   }
 
   h1 {
-  	/**font-family: goku_250_stencil-webfont;**/
   	font-size: 4.5rem;
   	margin-bottom: 1rem;
   	text-transform: uppercase;
@@ -135,6 +133,12 @@ nav a {
   	font-size: 6rem;
   }
 
+nav a:hover {
+	color: #fff;
+	text-decoration: border;
+	border-color: #000;
+}
+
 nav.active {
 	transform: translateY(0);
 }
@@ -151,11 +155,11 @@ nav li {
 	text-decoration: none;
 }
 
-.nav-link {
+/****.nav-link {
 	position: relative;
 }
 
-.nav-link:before {
+/****.nav-link:before {
 	content: "";
 	position: absolute;
 	bottom: -7px;
@@ -170,7 +174,7 @@ nav li {
 
 .nav-link:hover:before {
 	width: 20px;
-}
+}***/
 
 ins {
 	text-transform: uppercase;
@@ -468,17 +472,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0977b', end
 /**************/
 
 footer {
-	font-size: 1.2rem;
+	font-size: 2rem;
 	color: #000;
 	background-color: #fff;
 	text-align: center;
-	padding: 5rem 3rem;
+	padding: 5rem 0;
 	
 }
 
 .social {
 	display: block;
-	font-size: 2rem;
 	padding-top: 3rem;
 	font-family: Helvetica, Arial, sans-serif;
 	text-align: center;
@@ -532,18 +535,140 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666767', end
 
 @media screen and (min-width: 600px) {
 
+	body {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.logo {
+	width: 85%;
+}
+
+
+	.hamburger {
+	width: 7%;
+	height: auto;
+	padding-top: 2.5rem;
+}
+
 	nav a {
-		font-size: ;
+		font-size: 3rem;
 	}
 
+
+	h1 {
+  	font-size: 1.6rem;
+  }
+
+
+
+form {
+	line-height: 1.7rem;
+	border: 3px solid #fff;
+	padding: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+label {
+	font-size: 1.5rem;
+	display: inline-block;
+	margin-bottom: 1rem;
+	
+}
+
+input {
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
+	padding: 1.2rem;
+}
+
+textarea {
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+	padding: 2rem;
+}
+
+button {
+	font-size: 1.6rem;
+	border: 3px solid #fff;
+}
+
 	.multi-parallax {
-		height: ;
+		height: 45vh;
 	}
 
 	.layer {
-		height: ;
+		height: 45vh;
 	}
 
+
+
+footer {
+	font-size: 1rem;
+	color: #000;
+	background-color: #fff;
+	text-align: center;
+	padding: 4rem 0;
+	
+}
+
+.social {
+	display: block;
+	padding-top: 1.5rem;
+
+}
+
+}
+
+
+/******************************************
+/* MEDIA QUERY FOR 800px breakpoint
+/*******************************************/
+
+@media screen and (min-width: 800px) {
+
+	.hamburger {
+	width: 5%;
+	height: auto;
+	padding-top: 2.5rem;
+}
+
+	.logo {
+		width: 75%;
+	}
+
+	.multi-parallax {
+		height: 65vh;
+	}
+
+	.layer {
+		height: 65vh;
+	}
+}
+
+
+/******************************************
+/* MEDIA QUERY FOR 900px breakpoint
+/*******************************************/
+
+@media screen and (min-width: 900px) {
+
+	.container {
+		width: 80%;
+	}
+
+	.logo {
+		width: 70%;
+	}
+
+	.multi-parallax {
+		height: 70vh;
+	}
+
+	.layer {
+		height: 70vh;
+	}
 }
 
 
@@ -553,12 +678,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666767', end
 
 @media screen and (min-width: 1000px) {
 
+	.container {
+		width: 70%;
+	}
+
+	.hamburger {
+	width: 5%;
+	padding-top: 3rem;
+}
+
 	.multi-parallax {
-		height: 90vh;
+		height: 80vh;
 	}
 
 	.layer {
-		height: 90vh;
+		height: 80vh;
 	}
 
 /***************
